@@ -3,10 +3,10 @@ package com.example.studysmart.data.repositoryImpl
 import com.example.studysmart.data.local.SessionDao
 import com.example.studysmart.domain.model.Session
 import com.example.studysmart.domain.repository.SessionRepository
-import jakarta.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.take
+import javax.inject.Inject
 
 class SessionRepositoryImpl @Inject constructor(
     private val sessionDao: SessionDao

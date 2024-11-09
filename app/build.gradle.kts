@@ -3,8 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 
-    id("com.google.devtools.ksp") version "2.0.20-1.0.25"
-    id("com.google.dagger.hilt.android") version "2.52"
+    id("com.google.devtools.ksp") version "2.0.0-1.0.22"
+    id("com.google.dagger.hilt.android")  version "2.52"
     kotlin("kapt")
 
 }
@@ -73,11 +73,22 @@ dependencies {
     implementation("io.github.raamcosta.compose-destinations:core:1.6.16-beta")
     ksp("io.github.raamcosta.compose-destinations:ksp:1.6.16-beta")
 
-    // room dependencies
+    // Room dependencies
     implementation("androidx.room:room-runtime:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+
 
     // Hilt dependencies
     implementation("com.google.dagger:hilt-android:2.52")
-    kapt("com.google.dagger:hilt-compiler:2.52")
+    ksp("com.google.dagger:hilt-android-compiler:2.52")
+    ksp("androidx.hilt:hilt-compiler:1.2.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    //fonts
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.7.5")
+
+    //Desugaring
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")
+
 }

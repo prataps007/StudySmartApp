@@ -9,8 +9,11 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface SubjectDao {
 
+
+//    @Insert(onConflict = OnConflictStrategy.REPLACE)
     @Upsert
     suspend fun upsertSubject(subject: Subject)
+
 
     @Query("SELECT COUNT(*) FROM SUBJECT")
     fun getTotalSubjectCount(): Flow<Int>

@@ -10,7 +10,8 @@ import com.example.studysmart.domain.model.Task
 
 @Database(
     entities = [Subject::class, Session::class, Task::class],
-    version = 1
+    version = 1,
+//    exportSchema = false
 )
 @TypeConverters(ColorListConverter::class)
 abstract class AppDatabase: RoomDatabase() {

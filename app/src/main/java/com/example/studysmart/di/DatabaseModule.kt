@@ -5,11 +5,13 @@ import androidx.room.Room
 import com.example.studysmart.data.local.AppDatabase
 import com.example.studysmart.data.local.SessionDao
 import com.example.studysmart.data.local.SubjectDao
+import com.example.studysmart.data.local.TaskDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import jakarta.inject.Singleton
+import javax.inject.Singleton
+
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -38,6 +40,13 @@ object DatabaseModule {
     @Singleton
     fun provideSessionDao(database: AppDatabase): SessionDao{
         return database.sessionDao()
+    }
+
+    // Add this method to provide TaskDao
+    @Provides
+    @Singleton
+    fun provideTaskDao(database: AppDatabase): TaskDao {
+        return database.taskDao();
     }
 
 }

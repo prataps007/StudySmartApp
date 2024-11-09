@@ -20,7 +20,7 @@ import com.example.studysmart.R
 
 @Composable
 fun SubjectCard(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     subjectName: String,
     gradientColors: List<Color>,
     onClick: () -> Unit
@@ -46,7 +46,8 @@ fun SubjectCard(
             Text(
                 text = subjectName,
                 style = MaterialTheme.typography.headlineMedium,
-                color = Color.White
+                color = Color.White,
+                maxLines = 1
             )
         }
     }

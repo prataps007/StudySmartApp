@@ -5,7 +5,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface SessionRepository {
 
-
     suspend fun insertSession(session: Session)
 
     suspend fun deleteSession(session: Session)

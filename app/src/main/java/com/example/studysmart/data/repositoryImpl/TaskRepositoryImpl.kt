@@ -3,9 +3,10 @@ package com.example.studysmart.data.repositoryImpl
 import com.example.studysmart.data.local.TaskDao
 import com.example.studysmart.domain.model.Task
 import com.example.studysmart.domain.repository.TaskRepository
-import jakarta.inject.Inject
+
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
 class TaskRepositoryImpl @Inject constructor(
     private val taskDao: TaskDao
